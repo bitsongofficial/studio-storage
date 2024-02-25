@@ -1,19 +1,16 @@
-# Nitro Minimal Starter
+# BitSong Studio Storage
 
-Look at the [Nitro documentation](https://nitro.unjs.io/) to learn more.
+A very basic implentation to handle the storage in an easily way.
+
+## Stack
+- Nitro
+- Helia
 
 ## Setup
 
 Make sure to install the dependencies:
 
 ```bash
-# npm
-npm install
-
-# yarn
-yarn install
-
-# pnpm
 pnpm install
 ```
 
@@ -22,21 +19,23 @@ pnpm install
 Start the development server on <http://localhost:3000>
 
 ```bash
-npm run dev
+pnpm run dev
 ```
+
+## Endpoint Test
+- [Audio File](http://localhost:3000/ipfs/QmWMKEpXXtPpfLuPfBR84gLiLVV8egLQPKVRk5RGPobdVt)
+- [Cover File](http://localhost:3000/ipfs/QmRpEuACERGTLctqQaAjiPfQnj8XrzUkF8o6rmLLhCvSzg)
 
 ## Production
 
 Build the application for production:
 
 ```bash
-npm run build
+pnpm run build
 ```
 
 Locally preview production build:
 
 ```bash
-npm run preview
+pnpm run preview
 ```
-
-Check out the [deployment documentation](https://nitro.unjs.io/deploy) for more information.

@@ -1,7 +1,6 @@
-import { getHelia } from "../utils/helia"
-
 export default eventHandler(async (event) => {
-  const { fs } = await getHelia()
+  const { fs } = event.context
+  if (fs === undefined) throw new Error('fs is undefined')
 
   const file = new File(['ciao angelo'], 'hello.txt', { type: 'text/javascript' })
 
