@@ -5,14 +5,24 @@ export default defineEventHandler(async (event) => {
   if (contentType.startsWith('multipart/form-data')) {
     console.log('multipart/form-data')
 
-    const file = await readMultipartFormData(event)
-    const _file = file?.[0] as {
-      filename: string
-      data: Buffer
+    const [file] = await readMultipartFormData(event)
+    if (!file) {
+      throw createError({
+        statusCode: 400,
+        statusMessage: 'Bad Request',
+      })
     }
 
-    console.log('filename:', _file.filename)
-    console.log('size:', _file.data.length)
+    console.log('filename:', file.filename)
+    console.log('size:', file.data.length)
+
+    const cid = await event.context.fs.addFile({
+      content: file.data,
+      path: file.filename,
+    })
+
+    return cid
+
   } else {
     console.log('raw data')
 
@@ -21,5 +31,7 @@ export default defineEventHandler(async (event) => {
     console.log('size:', body.length)
 
     // parse file
+
+    return ''
   }
 })

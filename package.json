@@ -14,5 +14,6 @@
     "datastore-level": "^10.1.7",
     "helia": "^4.0.1",
     "nitropack": "latest"
-  }
+  },
+  "packageManager": "pnpm@8.0.0"
 }
